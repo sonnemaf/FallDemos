@@ -1,0 +1,78 @@
+﻿<Page x:Class="FallDemos.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:FallDemos"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <NavigationView x:Name="menu"
+                        OpenPaneLength="290"
+                        SelectionChanged="NavigationView_SelectionChanged"
+                        CompactModeThresholdWidth="560"
+                        ExpandedModeThresholdWidth="560">
+
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox x:Name="ASB"
+                                QueryIcon="Find" />
+            </NavigationView.AutoSuggestBox>
+
+            <NavigationView.PaneFooter>
+                <TextBlock Text="Version 1.0"
+                           Margin="48,4,0,4" />
+            </NavigationView.PaneFooter>
+
+            <Frame x:Name="ContentFrame"
+                   Navigated="Frame_Navigated">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition />
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="StackPanel Spacing"
+                                    Icon="DockBottom"
+                                    Tag="StackPanelSpacingPage" />
+                <NavigationViewItem Content="Grid Row &amp; Column Spacing"
+                                    Icon="ViewAll"
+                                    Tag="GridSpacingsPage" />
+                <NavigationViewItem Content="OnPreviewKey...Events"
+                                    Tag="OnPreviewKeyEventsPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE945;" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="New Controls"
+                                    Icon="Add"
+                                    Tag="NewControlsPage" />
+                <NavigationViewItem Content="Conditional XAML"
+                                    Icon="Help"
+                                    Tag="ConditionalXamlPage" />
+                <NavigationViewItem Content="AcrylicBrush"
+                                    Icon="Emoji"
+                                    Tag="AcrylicBrushPage" />
+                <NavigationViewItem Content="XamlCompositionBrushBase"
+                                    Icon="Emoji2"
+                                    Tag="XamlCompositionBrushBasePage" />
+                <NavigationViewItem Content="ParallaxView"
+                                    Icon="Emoji"
+                                    Tag="ParallaxViewPage" />
+                <NavigationViewItem Content="Reveal"
+                                    Icon="Directions"
+                                    Tag="RevealPage" />
+                <NavigationViewItem Content=".NET Standard (SqlClient + Dapper)"
+                                    Tag="DapperPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE950;" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+            </NavigationView.MenuItems>
+
+        </NavigationView>
+
+    </Grid>
+</Page>

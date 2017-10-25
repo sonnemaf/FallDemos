@@ -1,0 +1,38 @@
+﻿<Page x:Class="FallDemos.Views.Pages.ConditionalXamlPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:xamlBrewer="using:XamlBrewer.Uwp.Controls"
+      xmlns:fall="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract,5)"
+      xmlns:notFall="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractNotPresent(Windows.Foundation.UniversalApiContract,5)"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin="40"
+                    Padding="32"
+                    BorderThickness="8"
+                    BorderBrush="Black"
+                    Background="LightGray"
+                    fall:Spacing="24">
+            <Rectangle Height="40"
+                       Fill="Red" />
+            <Rectangle Height="40"
+                       Fill="White"
+                       notFall:Margin="0,24" />
+            <Rectangle Height="40"
+                       Fill="Blue" />
+            <TextBox FontSize="25"
+                     fall:CharacterCasing="Upper"
+                     notFall:Margin="0,24" />
+            
+            <fall:RatingControl />
+            <!--<notFall:xamlBrewer:Rating HorizontalAlignment="Center" />-->
+            <notFall:Border HorizontalAlignment="Center">
+                <xamlBrewer:Rating />
+            </notFall:Border>
+            
+        </StackPanel>
+    </Grid>
+</Page>
+

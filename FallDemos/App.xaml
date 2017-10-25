@@ -1,0 +1,27 @@
+﻿<Application
+    x:Class="FallDemos.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FallDemos"
+    RequestedTheme="Light">
+
+    <Application.Resources>
+
+        <Color x:Key="SystemAccentColor">#FF0000</Color>
+        
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize"
+                    Value="24" />
+        </Style>
+
+        <Style TargetType="ListViewItem">
+            <Setter Property="FontSize"
+                    Value="24" />
+        </Style>
+
+        <SolidColorBrush x:Key="ThemeControlForegroundBaseHighBrush"
+                         Color="{ThemeResource SystemBaseHighColor}" />
+
+    </Application.Resources>
+    
+</Application>
